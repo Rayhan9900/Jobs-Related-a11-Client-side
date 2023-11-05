@@ -1,0 +1,86 @@
+[
+    {
+        "jobTitle": "Full Stack Developer",
+        "deadline": "2023-11-15",
+        "priceRange": "$50,000 - $70,000",
+        "description": "Seeking a talented web developer to join our team and work on exciting web projects.",
+        "category": "Web Development"
+    },
+    {
+        "jobTitle": "Mobile App Developer",
+        "deadline": "2023-11-15",
+        "priceRange": "$50,000 - $70,000",
+        "description": "Seeking a talented web developer to join our team and work on exciting web projects.",
+        "category": "Web Development"
+    },
+    {
+        "jobTitle": "Back-End Developer",
+        "deadline": "2023-11-15",
+        "priceRange": "$50,000 - $70,000",
+        "description": "Seeking a talented web developer to join our team and work on exciting web projects.",
+        "category": "Web Development"
+    },
+    {
+        "jobTitle": "Senior Graphic Designer",
+        "deadline": "2023-11-30",
+        "priceRange": "$40,000 - $60,000",
+        "description": "We are looking for a creative graphic designer to create stunning visual content for our clients.",
+        "category": "Graphics Designer"
+    },
+    {
+        "jobTitle": "UI/UX Designer",
+        "deadline": "2023-11-30",
+        "priceRange": "$40,000 - $60,000",
+        "description": "We are looking for a creative graphic designer to create stunning visual content for our clients.",
+        "category": "Graphics Designer"
+    },
+    {
+        "jobTitle": "LoGo Designer",
+        "deadline": "2023-11-30",
+        "priceRange": "$40,000 - $60,000",
+        "description": "We are looking for a creative graphic designer to create stunning visual content for our clients.",
+        "category": "Graphics Designer"
+    },
+    {
+        "jobTitle": "BANNER Designer",
+        "deadline": "2023-11-30",
+        "priceRange": "$40,000 - $60,000",
+        "description": "We are looking for a creative graphic designer to create stunning visual content for our clients.",
+        "category": "Graphics Designer"
+    },
+    {
+        "jobTitle": "Digital Marketing Specialist",
+        "deadline": "2023-12-10",
+        "priceRange": "$55,000 - $75,000",
+        "description": "Join our digital marketing team to boost our online presence and drive successful marketing campaigns.",
+        "category": "Digital Marketing"
+    },
+    {
+        "jobTitle": "Digital Marketing Specialist",
+        "deadline": "2023-12-10",
+        "priceRange": "$55,000 - $75,000",
+        "description": "Join our digital marketing team to boost our online presence and drive successful marketing campaigns.",
+        "category": "Digital Marketing"
+    },
+    {
+        "jobTitle": "Digital Marketing Specialist",
+        "deadline": "2023-12-10",
+        "priceRange": "$55,000 - $75,000",
+        "description": "Join our digital marketing team to boost our online presence and drive successful marketing campaigns.",
+        "category": "Digital Marketing"
+    },
+    {
+        "jobTitle": "Digital Marketing Specialist",
+        "deadline": "2023-12-10",
+        "priceRange": "$55,000 - $75,000",
+        "description": "Join our digital marketing team to boost our online presence and drive successful marketing campaigns.",
+        "category": "Digital Marketing"
+    },
+    {
+        "jobTitle": "Front-End Developer",
+        "deadline": "2023-12-15",
+        "priceRange": "$45,000 - $65,000",
+        "description": "We're looking for a front-end developer to create responsive and user-friendly web interfaces.",
+        "category": "Web Development"
+    }
+]
