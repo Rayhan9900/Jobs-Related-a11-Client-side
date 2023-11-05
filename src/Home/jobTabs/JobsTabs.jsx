@@ -8,7 +8,7 @@ function JobsTabs() {
 
     const [jobs, setJobs] = useState([])
     useEffect(() => {
-        fetch('dev.json')
+        fetch('http://localhost:5000/jobs')
             .then(res => res.json())
             .then(data => {
                 setJobs(data)

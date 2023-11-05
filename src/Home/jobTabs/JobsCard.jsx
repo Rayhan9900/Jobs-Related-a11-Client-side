@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function JobsCard({ job }) {
-    const { jobTitle, deadline, priceRange, description } = job;
+    const { _id, jobTitle, deadline, priceRange, description } = job;
 
     const date = new Date();
 
@@ -15,7 +16,7 @@ function JobsCard({ job }) {
                     <p>{priceRange}</p>
                     <p>{description}</p>
                     <div className="card-actions justify-center">
-                        <button className="btn btn-accent">Bid Now</button>
+                        <Link to={`/jobDetails/${_id}`}> <button className="btn btn-accent">Bid Now</button></Link>
                     </div>
                 </div>
             </div>
