@@ -1,7 +1,36 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../../provider/AuthProvider';
+import toast from 'react-hot-toast';
+
 
 function Register() {
+
+    const { createUser } = useContext(AuthContext)
+
+    const handleRegister = event => {
+        event.preventDefault();
+
+        console.log(event.currentTarget);
+        const form = new FormData(event.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo')
+        const email = form.get('email');
+        const password = form.get('password')
+        console.log(name, photo, email, password);
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                toast.success('Login Successful')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+    }
+
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col ">
@@ -9,7 +38,7 @@ function Register() {
                     <h1 className="text-5xl font-bold">Please Register now!</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form className="card-body">
+                    <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -42,7 +71,7 @@ function Register() {
                         </div>
                     </form>
                     <Link to="/login">
-                        <button className="btn btn-primary">Login</button>
+                        <p>already have an account ? <button className='text-blue-500 underline'>Login</button></p>
                     </Link>
                 </div>
             </div>
