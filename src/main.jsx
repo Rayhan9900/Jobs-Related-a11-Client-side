@@ -6,13 +6,23 @@ import { RouterProvider } from 'react-router-dom'
 import AuthProvider from './provider/AuthProvider'
 import { Toaster } from 'react-hot-toast'
 
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <div className='max-w-7xl mx-auto'>
-        <RouterProvider router={router} />
-        <Toaster />
-      </div>
+
+      <QueryClientProvider client={queryClient}>
+        <div className='max-w-7xl mx-auto'>
+          <RouterProvider router={router} />
+          <Toaster />
+        </div>
+      </QueryClientProvider>
     </AuthProvider>
 
   </React.StrictMode>,

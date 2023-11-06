@@ -1,122 +1,104 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../../provider/AuthProvider'
-import { data } from 'autoprefixer';
 import toast from 'react-hot-toast';
+import axios from 'axios';
+import { useForm } from "react-hook-form"
 
 function AddJob() {
+
     const { user } = useContext(AuthContext)
+    const {
+        register,
+        handleSubmit,
+    } = useForm()
 
+    const onSubmit = (data) => {
 
-
-    const handleAddjob = e => {
-        e.preventDefault();
-        const form = e.target;
-        const email = form.email.value;
-        const jobtitle = form.jobtitle.value;
-        const deadline = form.deadline.value;
-        const description = form.description.value;
-        const category = form.category.value;
-        const minimumPrice = form.minimumPrice.value;
-        const maximumPrice = form.maximumPrice.value;
-        const data = { email, jobtitle, deadline, description, category, minimumPrice, maximumPrice }
-        console.log(data)
+        axios.post('http://localhost:5000/jobs', data)
+            .then(res => {
+                if (res.data.insertedId) {
+                    toast.success('My Bid Added Successfully')
+                }
+            })
     }
 
-    axios.post('http://localhost:5173/jobs', data)
-        .then(res => {
-            if (res.data.insertedId) {
-                toast.success('My Bid Added Successfully')
-            }
-        })
 
     return (
-        <div>
-            <div>
-                <form onSubmit={handleAddjob}>
-                    {/* ***************Email************** */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="email" placeholder={user.email} readOnly className="input input-bordered w-full" />
-                            </label>
-                        </div>
-                        {/* *********************Job Title******************** */}
-                        <div className="form-control md:w-1/2 ml-4">
-                            <label className="label">
-                                <span className="label-text">Job Title</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="jobtitle" placeholder="Job Title" required className="input input-bordered w-full" />
-                            </label>
-                        </div>
-                    </div>
-                    {/* ****************Deadline******************* */}
 
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2">
-                            <label className="label">
-                                <span className="label-text">Deadline</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="deadline" placeholder="Deadline" required className="input input-bordered w-full" />
-                            </label>
-                        </div>
-                        {/* ***************Description****************** */}
-                        <div className="form-control md:w-1/2 ml-4">
-                            <label className="label">
-                                <span className="label-text">Description</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="description" placeholder="Description" required className="input input-bordered w-full" />
-                            </label>
-                        </div>
-                    </div>
-                    {/* **************Catetgory***************** */}
-                    <div className="md:flex mb-8">
-                        <div className="form-control md:w-1/2 ">
-                            <label className="label">
-                                <span className="label-text">Category</span>
-                            </label>
-                            <label className="input-group w-1/2">
-                                <select className="select  select-bordered">
-                                    <option defaultValue={'Web Development'}>Web Development</option>
-                                    <option>Digital Marketing</option>
-                                    <option>Graphics Design</option>
-                                </select>
-                                <input type="text" name="category"
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <div className='flex'>
+                <div className="form-control md:w-1/2 ml-4">
+                    <label className="label">
+                        <span className="label-text">Email</span>
+                    </label>
+                    <label className="input-group">
+                        <input {...register("email")} type="text" defaultValue={user.email} required className="input input-bordered w-full" />
+                    </label>
+                </div>
+                <div className="form-control md:w-1/2 ml-4">
+                    <label className="label">
+                        <span className="label-text">Job Title</span>
+                    </label>
+                    <label className="input-group">
+                        <input {...register("Jobtitle")} type="text"
+                            placeholder="Job Title" required className="input input-bordered w-full" />
+                    </label>
+                </div>
+            </div>
+            <div className='flex'>
+                <div className="form-control md:w-1/2 ml-4">
+                    <label className="label">
+                        <span className="label-text">Deadline</span>
+                    </label>
+                    <label className="input-group">
+                        <input {...register("deadline")} type="text"
+                            placeholder="Deadline" required className="input input-bordered w-full" />
+                    </label>
+                </div>
+                <div className="form-control md:w-1/2 ml-4">
+                    <label className="label">
+                        <span className="label-text">Description</span>
+                    </label>
+                    <label className="input-group">
+                        <input {...register("description")} type="text"
+                            placeholder="Description" required className="input input-bordered w-full" />
+                    </label>
+                </div>
+            </div>
+            <div className='flex'>
+                <div className="form-control md:w-1/2 ml-4">
+                    <label className="label">
+                        <span className="label-text">Minimum Price</span>
+                    </label>
+                    <label className="input-group">
+                        <input {...register("minimumPrice")} type="text"
+                            placeholder="Minimum Price" required className="input input-bordered w-full" />
+                    </label>
+                </div>
+                <div className="form-control md:w-1/2 ml-4">
+                    <label className="label">
+                        <span className="label-text">Maximum Price</span>
+                    </label>
+                    <label className="input-group">
+                        <input {...register("maximumPrice")} type="text"
+                            placeholder="Maximum Price" required className="input input-bordered w-full" />
+                    </label>
+                </div>
+            </div>
+            <div className="form-control md:w-1/2 ml-4 py-4">
+                <label className="label">
+                    <span className="label-text">Category</span>
+                </label>
+                <select className='' {...register("category")}>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Graphics Design">Graphics Design</option>
+                </select>
+            </div>
 
-                                />
-                            </label>
-                        </div>
+            <input type="submit" value="Add Job" className="btn btn-block mb-5" />
+        </form>
 
-                        {/* ****************Minimum Price****************** */}
-                        <div className="form-control md:w-1/2 ml-4">
-                            <label className="label">
-                                <span className="label-text">Minimum Price</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="minimumPrice" placeholder="Minimum Price" required className="input input-bordered w-full" />
-                            </label>
-                        </div>
-                    </div>
-                    {/* **************Maximum Price************* */}
-                    <div className="mb-8">
-                        <div className="form-control w-full">
-                            <label className="label">
-                                <span className="label-text">Maximum Price</span>
-                            </label>
-                            <label className="input-group">
-                                <input type="text" name="maximumPrice" placeholder="Maximum Price" required className="input input-bordered w-full" />
-                            </label>
-                        </div>
-                    </div>
-                    <input type="submit" value="Add Job" className="btn btn-block" />
-                </form>
-            </div >
-        </div >
     )
 }
 
