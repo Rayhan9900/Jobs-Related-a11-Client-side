@@ -1,13 +1,27 @@
 
 import { Link } from 'react-router-dom'
 import useMyPostedJob from '../../hooks/useMyPostedJob'
+import toast from 'react-hot-toast'
 
 
 
 function MyPostedJobs() {
     const [posted, refetch] = useMyPostedJob()
 
-    console.log(posted)
+
+    const handleDelete = (_id) => {
+        fetch(`http://localhost:5000/jobs/${_id}`, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deleteCount > 0) {
+                    toast.success('delete successful')
+                }
+
+            })
+    }
 
     return (
         <div className='grid grid-cols-3 gap-4 mt-5'>
@@ -26,7 +40,7 @@ function MyPostedJobs() {
                                 <Link to={`/update/${myPost._id}`}>
                                     <button className="btn btn-primary">Update</button>
                                 </Link>
-                                <button className="btn btn-ghost">Delete</button>
+                                <button onClick={() => handleDelete(myPost._id)} className="btn btn-secondary">Delete</button>
                             </div>
                         </div>
                     </div>
