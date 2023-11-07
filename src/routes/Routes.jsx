@@ -44,8 +44,9 @@ const router = createBrowserRouter([
                 element: <BidRequests />
             },
             {
-                path: "update",
-                element: <Update />
+                path: "/update/:id",
+                element: <Update />,
+                loader: ({ params }) => fetch(`http://localhost:5000/jobs/${params.id}`)
             },
             {
                 path: "/login",

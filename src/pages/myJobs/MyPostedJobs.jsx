@@ -1,24 +1,10 @@
-import { useQuery } from '@tanstack/react-query'
-import React, { useContext } from 'react'
-import { AuthContext } from '../../provider/AuthProvider'
-import axios from 'axios'
+
 import { Link } from 'react-router-dom'
 import useMyPostedJob from '../../hooks/useMyPostedJob'
 
 
 
 function MyPostedJobs() {
-    // const { user } = useContext(AuthContext)
-
-    // const { data: posted = [], refetch } = useQuery({
-    //     queryKey: ['jobs', user?.email],
-    //     queryFn: async () => {
-    //         const res = await axios.get(`http://localhost:5000/jobs?email=${user.email}`,);
-
-    //         return res.data;
-    //     }
-    // })
-
     const [posted, refetch] = useMyPostedJob()
 
     console.log(posted)
@@ -37,7 +23,7 @@ function MyPostedJobs() {
                             <p>{myPost.minimumPrice}</p>
                             <p>{myPost.maximumPrice}</p>
                             <div className="card-actions justify-end">
-                                <Link to="/update">
+                                <Link to={`/update/${myPost._id}`}>
                                     <button className="btn btn-primary">Update</button>
                                 </Link>
                                 <button className="btn btn-ghost">Delete</button>
