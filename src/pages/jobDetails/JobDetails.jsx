@@ -13,7 +13,7 @@ function JobDetails() {
     const { _id, jobTitle, deadline, priceRange, description } = job;
 
     const handleBid = () => {
-        const myJobs = { email: user.email, jobTitle, deadline, priceRange, description }
+        const myJobs = { email: user.email, jobTitle, deadline, status: 'pending', priceRange, description }
         axios.post('http://localhost:5000/mybids', myJobs)
             .then(res => {
                 if (res.data.insertedId) {

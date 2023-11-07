@@ -1,8 +1,10 @@
-import React from 'react'
+import error from '../../assets/error.webp'
 
 function ErrorPage() {
     return (
-        <div>ErrorPage</div>
+        <div>
+            <img className='w-full mt-4' src={error} alt="" />
+        </div>
     )
 }
 
