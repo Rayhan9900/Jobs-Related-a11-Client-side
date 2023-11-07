@@ -10,17 +10,12 @@ function MyPostedJobs() {
     const { data: posted = [], refetch } = useQuery({
         queryKey: [user?.email],
         queryFn: () => {
-            const res = fetch(`http://localhost:5000/jobs/posted?email=${user?.email}`,)
-            return res.data
+            const res = fetch(`http://localhost:5000/jobs/posted?email=${user?.email}`,);
+            
+            return res.posted
         }
 
-        // const { data: posted = [], refetch } = useQuery({
-        //     queryKey: [user?.email],
-        //     queryFn: () => {
-        //         const res = fetch(`http://localhost:5000/jobs/posted?email=${user?.email}`);
-        //         return res.data;
-        //     }
-        // });
+        
 
     })
 
