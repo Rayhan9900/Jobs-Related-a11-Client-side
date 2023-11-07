@@ -4,13 +4,14 @@ import useMyPostedJob from '../../hooks/useMyPostedJob'
 import { useLoaderData } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import { AuthContext } from '../../provider/AuthProvider'
+import axios from 'axios'
 
 function Update() {
 
     const { user } = useContext(AuthContext)
 
     const update = useLoaderData()
-    console.log(update)
+
 
     const {
         register,
@@ -19,13 +20,16 @@ function Update() {
 
     const onSubmit = (data) => {
 
-        axios.post('http://localhost:5000/jobs', data)
+        axios.put(`http://localhost:5000/jobs/${update._id}`, data)
             .then(res => {
-                if (res.data.insertedId) {
-                    toast.success('My Bid Added Successfully')
-                }
+                // if (res.data) {
+                //     toast.success('Update Successfully')
+                // }
+                console.log(res.data)
             })
+
     }
+
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -44,8 +48,7 @@ function Update() {
                         </label>
                         <label className="input-group">
                             <input {...register("Jobtitle")} type="text"
-                                defaultValue={Jobtitle}
-
+                                defaultValue={update.Jobtitle}
                                 placeholder="Job Title" required className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -57,7 +60,7 @@ function Update() {
                         </label>
                         <label className="input-group">
                             <input {...register("deadline")} type="text"
-                                defaultValue={deadline}
+                                defaultValue={update.deadline}
                                 placeholder="Deadline" required className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -67,7 +70,7 @@ function Update() {
                         </label>
                         <label className="input-group">
                             <input {...register("description")} type="text"
-                                defaultValue={description}
+                                defaultValue={update.description}
                                 placeholder="Description" required className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -79,7 +82,7 @@ function Update() {
                         </label>
                         <label className="input-group">
                             <input {...register("minimumPrice")} type="text"
-                                defaultValue={minimumPrice}
+                                defaultValue={update.minimumPrice}
                                 placeholder="Minimum Price" required className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -89,7 +92,7 @@ function Update() {
                         </label>
                         <label className="input-group">
                             <input {...register("maximumPrice")} type="text"
-                                defaultValue={maximumPrice}
+                                defaultValue={update.maximumPrice}
                                 placeholder="Maximum Price" required className="input input-bordered w-full" />
                         </label>
                     </div>
@@ -115,3 +118,5 @@ function Update() {
 }
 
 export default Update
+
+// < input {...register("Jobtitle") } type = "text" defaultValue = { JobTitle } placeholder = "Job Title" required className = "input input-bordered w-full" />

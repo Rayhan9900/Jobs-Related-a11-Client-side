@@ -16,12 +16,12 @@ function MyPostedJobs() {
                     <div key={myPost._id} className="card w-96 bg-neutral text-neutral-content">
                         <div className="card-body items-center text-center">
                             <h2 className="card-title"> {posted.email}</h2>
-                            <p>{myPost.jobTitle}</p>
+                            <p>{myPost.Jobtitle}</p>
                             <p>{myPost.deadline}</p>
                             <p>{myPost.description}</p>
                             <p>{myPost.category}</p>
-                            <p>{myPost.minimumPrice}</p>
-                            <p>{myPost.maximumPrice}</p>
+                            <p>Minimum Price ${myPost.minimumPrice}</p>
+                            <p>MaximumPrice ${myPost.maximumPrice}</p>
                             <div className="card-actions justify-end">
                                 <Link to={`/update/${myPost._id}`}>
                                     <button className="btn btn-primary">Update</button>

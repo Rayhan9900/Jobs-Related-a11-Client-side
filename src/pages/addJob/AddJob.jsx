@@ -20,6 +20,7 @@ function AddJob() {
                     toast.success('My Bid Added Successfully')
                 }
             })
+        console.log(data)
     }
 
 
