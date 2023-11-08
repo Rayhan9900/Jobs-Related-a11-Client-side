@@ -10,7 +10,7 @@ function MyPostedJobs() {
 
 
     const handleDelete = (_id) => {
-        fetch(`http://localhost:5000/jobs/${_id}`, {
+        fetch(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/jobs/${_id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

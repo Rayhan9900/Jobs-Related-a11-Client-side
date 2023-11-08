@@ -15,7 +15,7 @@ function JobDetails() {
     const handleBid = () => {
         const myJobs = { email: user.email, jobTitle, deadline, status: 'pending', priceRange, description }
         console.log(jobTitle)
-        axios.post('http://localhost:5000/mybids', myJobs)
+        axios.post('https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/mybids', myJobs)
             .then(res => {
                 if (res.data.insertedId) {
                     toast.success('My Bid Added Successfully')

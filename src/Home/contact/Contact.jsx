@@ -5,7 +5,7 @@ import Title from '../../components/Title';
 
 function Contact() {
     return (
-        <div className='flex  justify-around py-20 bg-blue-200 mb-5'>
+        <div className='flex md:grid-cols-3 justify-around py-20 bg-blue-200 mb-5'>
             <div className=''>
                 <h2 className="text-sm text-green-500 ">INFORMATION</h2>
                 <h2 className="text-3xl mt-4">CONTACT INFORMATION</h2>

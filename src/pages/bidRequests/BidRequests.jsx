@@ -14,19 +14,19 @@ function BidRequests() {
     const { data: bidRequests = [], refetch } = useQuery({
         queryKey: ['bids'],
         queryFn: async () => {
-            const res = await axios.get(`http://localhost:5000/bids/${user?.email}`);
+            const res = await axios.get(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/bids/${user?.email}`);
             return res.data;
         }
     })
 
     const handleAccept = (id) => {
-        axios.patch(`http://localhost:5000/bid-requests/accept/${id}`)
+        axios.patch(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/bid-requests/accept/${id}`)
         .then(res => {
             refetch()
         })
     };
     const handleReject = (id) => {
-        axios.patch(`http://localhost:5000/bid-requests/reject/${id}`)
+        axios.patch(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/bid-requests/reject/${id}`)
         .then(res => {
             refetch()
         })

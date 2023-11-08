@@ -8,7 +8,7 @@ function JobsTabs() {
 
     const [jobs, setJobs] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/jobs')
+        fetch('https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/jobs')
             .then(res => res.json())
             .then(data => {
                 setJobs(data)
