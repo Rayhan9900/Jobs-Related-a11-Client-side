@@ -45,7 +45,7 @@ function BidRequests() {
                    <th className="text-violet-500 text-xl">Price</th>
                    <th className="text-cyan-600 text-xl">Status</th>
                    <th>Action</th>
-                   <th>Action</th>
+                
             </tr>
      </thead>
                     <tbody>
