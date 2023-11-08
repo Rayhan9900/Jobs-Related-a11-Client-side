@@ -1,9 +1,19 @@
+import { useContext } from 'react';
 import logo from '../../assets/logo12.jpg'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
+import { AuthContext } from '../../provider/AuthProvider';
 
 function Nabver() {
 
 
+    const { user, logOut } = useContext(AuthContext);
+
+
+    const handleSingOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const nabver = <>
         <li><NavLink to="/">Home</NavLink></li>
@@ -11,8 +21,18 @@ function Nabver() {
         <li><NavLink to="/myPostedJob">My Posted Job</NavLink></li>
         <li><NavLink to="/myBids">My Bids</NavLink></li>
         <li><NavLink to="/bidRequests">Bid Requests</NavLink></li>
-        <li><NavLink to="/login">Login</NavLink></li>
+        {/* <li><NavLink to="/login">Login</NavLink></li> */}
 
+        {
+            user ?
+                <>
+                    <li onClick={handleSingOut} className='mt-2 cursor-pointer'>Sign Out</li>
+                    <p className=' mx-4 mt-2'>{user.displayName}</p>
+                    <img src={user.photoURL} className='w-12 h-12 rounded-full' alt="" />
+                </>
+                :
+                <Link to="/login"><li className='mt-2 cursor-pointer'>Login</li></Link>
+        }
 
     </>
 
@@ -36,9 +56,7 @@ function Nabver() {
                     {nabver}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <a className="btn">Button</a>
-            </div>
+
         </div>
     )
 }

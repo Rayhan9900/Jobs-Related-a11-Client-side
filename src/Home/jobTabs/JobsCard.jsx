@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 function JobsCard({ job }) {
-    const { _id, jobTitle, deadline, priceRange, description } = job;
+    const { _id, Jobtitle, deadline, priceRange, description } = job;
 
     const date = new Date();
 
@@ -11,7 +11,7 @@ function JobsCard({ job }) {
 
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
-                    <h2 className="card-title">{jobTitle}</h2>
+                    <h2 className="card-title">{Jobtitle}</h2>
                     <p>{deadline}</p>
                     <p>{priceRange}</p>
                     <p>{description}</p>

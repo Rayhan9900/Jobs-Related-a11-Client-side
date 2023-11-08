@@ -26,7 +26,7 @@ function JobDetails() {
 
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero min-h-screen bg-cyan-400">
                 <div className="hero-content text-center">
                     <div className="max-w-md">
                         <h1 className="text-5xl font-bold">{jobTitle}</h1>
@@ -35,7 +35,7 @@ function JobDetails() {
                         <p className="py-6">{description}</p>
 
                         <Link to="/myBids">
-                            <button onClick={() => handleBid(job)} className="btn btn-primary">Add myBid</button>
+                            <button onClick={() => handleBid(job)} className="btn btn-primary hover:bg-yellow-400">Add myBid</button>
                         </Link>
 
                     </div>

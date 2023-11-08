@@ -26,11 +26,11 @@ function MyBids() {
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Email</th>
-                            <th>Job Title</th>
-                            <th>Deadline</th>
-                            <th>Status</th>
-                            <th>Button</th>
+                            <th className="text-red-500 text-3xl">Email</th>
+                            <th className="text-green-600 text-3xl" >Job Title</th>
+                            <th className="text-fuchsia-600 text-3xl">Deadline</th>
+                            <th className="text-violet-500 text-3xl">Status</th>
+                            <th className="text-cyan-600 text-3xl">Button</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -43,7 +43,7 @@ function MyBids() {
                                     <td>{bids.jobTitle}</td>
                                     <td>{bids.deadline}</td>
                                     <td>{bids.status}</td>
-                                    <td>Complete</td>
+                                    <td className="text-emerald-500 font-bold hover:text-sky-500">Complete</td>
                                 </tr>
                             )
                         }
