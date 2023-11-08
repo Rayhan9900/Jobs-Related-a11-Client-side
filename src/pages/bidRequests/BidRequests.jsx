@@ -7,7 +7,6 @@ import { ProgressBar } from 'react-step-progress-bar';
 
 function BidRequests() {
 
-    const [currentStatus, setCurrentStatus] = useState('initial');
 
 
     const { user } = useContext(AuthContext)
@@ -16,18 +15,21 @@ function BidRequests() {
         queryKey: ['bids'],
         queryFn: async () => {
             const res = await axios.get(`http://localhost:5000/bids/${user?.email}`);
-            console.log(res)
             return res.data;
         }
     })
-    console.log(bidRequests)
 
-    const handleAccept = () => {
-        setCurrentStatus('inProgress');
-        axios.patch()
+    const handleAccept = (id) => {
+        axios.patch(`http://localhost:5000/bid-requests/accept/${id}`)
+        .then(res => {
+            refetch()
+        })
     };
-    const handleReject = () => {
-        setCurrentStatus('rejected');
+    const handleReject = (id) => {
+        axios.patch(`http://localhost:5000/bid-requests/reject/${id}`)
+        .then(res => {
+            refetch()
+        })
     };
 
 
@@ -45,7 +47,7 @@ function BidRequests() {
                    <th className="text-violet-500 text-xl">Price</th>
                    <th className="text-cyan-600 text-xl">Status</th>
                    <th>Action</th>
-                
+                   <th>Action</th>
             </tr>
      </thead>
                     <tbody>
@@ -55,46 +57,16 @@ function BidRequests() {
                                <td>{request.jobTitle}</td>
                                <td>{request.email}</td>
                                 <td>{request.deadline}</td>
-                                <td>{request.price}</td>
-                         <td>{currentStatus}</td>
+                                <td>{request.priceRange}</td>
+                         <td>{request.status}</td>
                             <td>
-                                    {currentStatus === 'initial' && (
-                                        <>
-                                        <button className='gap-4' onClick={handleAccept}>Accept</button>
-                                            <button onClick={handleReject}>Reject</button>
-                                     </>
-                                 )}
-                                     {currentStatus === 'inProgress' && (
-                                     <ProgressBar percent={50}>
-                                             <Step transition="scale">
-                                                 {({ accomplished }) => (
-                                                  <div
-                                                        style={{
-                                                             display: 'block',
-                                                             width: '100%',
-                                                         textAlign: 'center',
-                                                        }}
-                                                    >
-                                                         {accomplished ? 'In Progress' : 'Pending'}
-                                                    </div>
-                                                )}
-                                            </Step>
-                                           <Step transition="scale">
-                                          {({ accomplished }) => (
-                                                    <div
-                                                        style={{
-                                                           display: 'block',
-                                                           width: '100%',
-                                                           textAlign: 'center',
-                                                        }}
-                                                    >
-                                                 {accomplished ? 'Completed' : 'Pending'}
-                                                 </div>
-                                                )}
-                                            </Step>
-                                        </ProgressBar>
-                                    )}
-                                </td>
+                            <button 
+                            className='gap-4' onClick={()=>handleAccept(request._id)}
+                            >Accept</button>
+                                  </td>   
+                                  <td>
+                                  <button onClick={() =>handleReject(request._id)}>Reject</button>
+                                  </td>
                             </tr>
                         ))}
                     </tbody>

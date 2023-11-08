@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 function MyBids() {
-    // const [bids, setBids] = useState()
+    const [disabled, setdisabled] = useState(false)
 
     const { user } = useContext(AuthContext)
 
@@ -17,11 +17,12 @@ function MyBids() {
             return res.data;
         }
     })
-    const handleComplet = (index) => {
-
+    const handleComplet = () => {
+        setdisabled(true)
     }
 
-    console.log(myBids)
+
+
     return (
         <div className="bg-fuchsia-500" >
             <div className="overflow-x-auto bg-teal-300">
@@ -49,8 +50,8 @@ function MyBids() {
                                     <td>{bids.status}</td>
                                     <td>
                                         {
-                                            bids.status === 'inProgress' && (
-                                                <button onClick={() => handleComplet(index)}>Complete</button>
+                                            bids.status === 'in progress' && (
+                                                <button onClick={handleComplet}>Complete</button>
                                             )}
 
                                     </td>

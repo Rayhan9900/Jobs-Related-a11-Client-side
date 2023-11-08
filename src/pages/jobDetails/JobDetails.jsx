@@ -10,7 +10,7 @@ function JobDetails() {
     const { user } = useContext(AuthContext)
 
     const job = useLoaderData();
-    const { _id, jobTitle, deadline, priceRange, description, email } = job;
+    const { jobTitle, deadline, priceRange, description, email } = job;
 
     const handleBid = () => {
         const myJobs = { email: user.email, jobTitle, deadline, status: 'pending', priceRange, description }

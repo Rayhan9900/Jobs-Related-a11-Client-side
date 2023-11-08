@@ -16,7 +16,8 @@ function MyPostedJobs() {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.deleteCount > 0) {
+                if (data.deletedCount > 0) {
+                    refetch()
                     toast.success('delete successful')
                 }
 
