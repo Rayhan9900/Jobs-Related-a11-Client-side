@@ -19,8 +19,8 @@ function MyBids() {
 
     console.log(myBids)
     return (
-        <div>
-            <div className="overflow-x-auto">
+        <div className="bg-fuchsia-500" >
+            <div className="overflow-x-auto bg-teal-300">
                 <table className="table">
                     {/* head */}
                     <thead>

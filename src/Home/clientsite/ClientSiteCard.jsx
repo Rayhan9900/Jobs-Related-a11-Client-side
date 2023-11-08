@@ -5,7 +5,7 @@ import Title from "../../components/Title";
 
 function ClientSiteCard({ client }) {
 
-    const { id, img, description, name } = client;
+    const { img, description, name } = client;
 
     return (
         <div>

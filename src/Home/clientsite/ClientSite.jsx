@@ -7,7 +7,7 @@ function ClientSite() {
     const [clients, setClients] = useState([])
 
     useEffect(() => {
-        fetch('client.json')
+        fetch('http://localhost:5000/clients')
             .then(res => res.json())
             .then(data => {
                 setClients(data)
