@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 
 function MyBids() {
+    // const [bids, setBids] = useState()
 
     const { user } = useContext(AuthContext)
 
@@ -16,6 +17,9 @@ function MyBids() {
             return res.data;
         }
     })
+    const handleComplet = (index) => {
+
+    }
 
     console.log(myBids)
     return (
@@ -43,7 +47,13 @@ function MyBids() {
                                     <td>{bids.jobTitle}</td>
                                     <td>{bids.deadline}</td>
                                     <td>{bids.status}</td>
-                                    <td className="text-emerald-500 font-bold hover:text-sky-500">Complete</td>
+                                    <td>
+                                        {
+                                            bids.status === 'inProgress' && (
+                                                <button onClick={() => handleComplet(index)}>Complete</button>
+                                            )}
+
+                                    </td>
                                 </tr>
                             )
                         }

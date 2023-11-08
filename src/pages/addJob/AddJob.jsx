@@ -52,7 +52,7 @@ function AddJob() {
                         <span className="label-text">Deadline</span>
                     </label>
                     <label className="input-group">
-                        <input {...register("deadline")} type="text"
+                        <input {...register("deadline")} type="date"
                             placeholder="Deadline" required className="input input-bordered w-full" />
                     </label>
                 </div>
