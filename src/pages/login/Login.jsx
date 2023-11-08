@@ -33,16 +33,16 @@ function Login() {
     const handleGoogle = () => {
         signInGoogle()
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
     }
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero md:min-h-screen bg-base-200 ">
             <div className="hero-content flex-col ">
                 <div className="text-center ">
                     <h1 className="text-5xl font-bold">Please Login now!</h1>

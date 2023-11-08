@@ -5,8 +5,7 @@ import axios from "axios";
 
 
 function MyBids() {
-    const [disabled, setdisabled] = useState(false)
-
+    const [disabled, setDisabled] = useState(false);
     const { user } = useContext(AuthContext)
 
     const { data: myBids = [], refetch } = useQuery({
@@ -17,8 +16,12 @@ function MyBids() {
             return res.data;
         }
     })
-    const handleComplet = () => {
-        setdisabled(true)
+
+    const handleComplet = (id) => {
+        axios.patch(`http://localhost:5000/bids/complete/${id}`)
+            .then((res) => {
+                refetch();
+            });
     }
 
 
@@ -51,7 +54,7 @@ function MyBids() {
                                     <td>
                                         {
                                             bids.status === 'in progress' && (
-                                                <button onClick={handleComplet}>Complete</button>
+                                                <button onClick={() => handleComplet(bids._id)} disabled={disabled}>Complete</button>
                                             )}
 
                                     </td>

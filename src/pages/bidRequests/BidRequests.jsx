@@ -58,7 +58,13 @@ function BidRequests() {
                                <td>{request.email}</td>
                                 <td>{request.deadline}</td>
                                 <td>{request.priceRange}</td>
-                         <td>{request.status}</td>
+                         <td>
+                         {request.status === 'in-progress' ? (
+                  <ProgressBar percent={50} filledBackground="linear-gradient(to right, #fefb72, #f0bb31)" />
+                ) : (
+                  request.status
+                )}
+                         </td>
                             <td>
                             <button 
                             className='gap-4' onClick={()=>handleAccept(request._id)}
