@@ -26,7 +26,7 @@ function JobsTabs() {
             </div>
             <Tabs>
                 <TabList>
-                    <div className='flex justify-evenly text-3xl bg-lime-500'>
+                    <div className='flex md:justify-evenly gap-5 md:ml-0 ml-4 text-xs md:text-3xl bg-lime-500'>
                         <Tab className='hover:bg-cyan-500'>Web Development</Tab>
                         <Tab className='hover:bg-sky-500'>Digital Marketing</Tab>
                         <Tab className='hover:bg-blue-500'>Graphics Design</Tab>

@@ -42,12 +42,12 @@ function Login() {
 
 
     return (
-        <div className="hero md:min-h-screen bg-base-200 ">
+        <div className="hero md:min-h-screen bg-slate-300 ">
             <div className="hero-content flex-col ">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold">Please Login now!</h1>
+                    <h1 className="text-5xl font-bold mb-5 text-rose-600">Please Login now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl shadow-orange-500 bg-red-50">
                     <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -66,10 +66,10 @@ function Login() {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
-                    <p className=''>Don't have an account please ? <Link to="/register"><button className='text-cyan-500 underline '>Registe</button></Link> </p>
+                    <p className='text-center mb-4'>Don't have an account please ? <Link to="/register" className='text-cyan-500'>Registe</Link> </p>
                     <div className="divider">OR</div>
 
-                    <button className='flex justify-center items-center gap-4 border-2 border-white py-2 text-accent' onClick={handleGoogle}> <FcGoogle size={30} /> Google</button>
+                    <button className='flex justify-center items-center gap-4  py-2 text-accent' onClick={handleGoogle}> <FcGoogle size={30} /> Google</button>
                 </div>
             </div>
         </div>

@@ -5,8 +5,9 @@ import Title from '../../components/Title';
 
 function Contact() {
     return (
-        <div className='flex md:grid-cols-3 justify-around py-20 bg-blue-200 mb-5'>
-            <div className=''>
+        <div className='md:flex py-20 justify-around bg-blue-200'>
+            <div className='pl-4'>
+
                 <h2 className="text-sm text-green-500 ">INFORMATION</h2>
                 <h2 className="text-3xl mt-4">CONTACT INFORMATION</h2>
                 <p className='mt-3'>Event definition is - somthing that happens occurre How evesnt sentence. <br /> Synonym when an unknown printer took a galley.</p>
@@ -27,24 +28,24 @@ function Contact() {
                     </div>
                 </div>
             </div>
-            <div>
+            <div >
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text"></span>
                     </label>
-                    <input type="name" name='' placeholder="Your Name*" className="input input-bordered" required />
+                    <input type="name" name='' placeholder="Your Name*" className="input input-bordered w-full" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
                         <span className="label-text"></span>
                     </label>
-                    <input type="email" name='email' placeholder="Your Email*" className="input input-bordered" required />
+                    <input type="email" name='email' placeholder="Your Email*" className="input input-bordered w-full" required />
                 </div>
                 <div className="form-control ">
                     <label className="label">
                         <span className="label-text"></span>
                     </label>
-                    <input type="email" name='email' placeholder="Your Message*" className="input input-bordered w-96 h-40" required />
+                    <textarea className="textarea textarea-info" placeholder="Bio"></textarea>
                 </div>
             </div>
         </div>

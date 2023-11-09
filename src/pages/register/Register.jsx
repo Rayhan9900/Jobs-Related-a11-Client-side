@@ -32,12 +32,12 @@ function Register() {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-slate-300">
             <div className="hero-content flex-col ">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold">Please Register now!</h1>
+                    <h1 className="text-5xl font-bold text-rose-600 mb-5">Please Register now!</h1>
                 </div>
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card flex-shrink-0 md:w-full max-w-sm shadow-2xl shadow-orange-500 bg-red-50">
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
@@ -62,17 +62,16 @@ function Register() {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                            {/* <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label> */}
+
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
-                    <Link to="/login">
-                        <p>already have an account ? <button className='text-blue-500 underline'>Login</button></p>
-                    </Link>
+
+                    <p className='text-center mb-4'>already have an account ? <Link
+                        to='/login' className='text-blue-500'>Login</Link></p>
+
                 </div>
             </div>
         </div>

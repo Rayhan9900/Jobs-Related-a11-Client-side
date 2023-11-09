@@ -38,7 +38,7 @@ function Nabver() {
 
 
     return (
-        <div className="navbar mt-6  rounded-t-xl bg-gradient-to-r from-indigo-300 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...">
+        <div className="navbar rounded-t-xl bg-gradient-to-r from-indigo-300 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

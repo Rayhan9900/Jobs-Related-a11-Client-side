@@ -28,26 +28,26 @@ function MyBids() {
 
     return (
         <div className="bg-fuchsia-500" >
-            <div className="overflow-x-auto bg-teal-300">
+            <div className=" overflow-x-auto bg-teal-300">
                 <table className="table">
                     {/* head */}
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th className="text-red-500 text-3xl">Email</th>
-                            <th className="text-green-600 text-3xl" >Job Title</th>
-                            <th className="text-fuchsia-600 text-3xl">Deadline</th>
-                            <th className="text-violet-500 text-3xl">Status</th>
-                            <th className="text-cyan-600 text-3xl">Button</th>
+                            <th className="text-red-500 md:text-3xl text-xs">Email</th>
+                            <th className="text-green-600 md:text-3xl text-xs" >Job Title</th>
+                            <th className="text-fuchsia-600 md:text-3xl text-xs">Deadline</th>
+                            <th className="text-violet-500 md:text-3xl text-xs">Status</th>
+                            <th className="text-cyan-600 md:text-3xl text-xs">Button</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
                             myBids.map((bids, index) =>
-                                <tr key={bids._id} className="bg-base-200">
+                                <tr key={bids._id} className="bg-base-20">
                                     <td>{index + 1}</td>
-                                    <th>{bids.email}</th>
+                                    <td>{bids.email}</td>
                                     <td>{bids.jobTitle}</td>
                                     <td>{bids.deadline}</td>
                                     <td>{bids.status}</td>

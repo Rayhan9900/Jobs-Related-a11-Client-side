@@ -25,16 +25,16 @@ function MyPostedJobs() {
     }
 
     return (
-        <div className='grid grid-cols-3 gap-4 mt-5'>
+        <div className='grid md:grid-cols-3 gap-12 mt-5 '>
             {
                 posted.map(myPost =>
-                    <div key={myPost._id} className="card w-96 bg-neutral text-neutral-content">
+                    <div key={myPost._id} className="card ml-2 md:ml-0 mr-2 md:mr-0 shadow-2xl shadow-orange-300 md:w-96 bg-emerald-200 text-base">
                         <div className="card-body items-center text-center">
                             <h2 className="card-title"> {posted.email}</h2>
                             <p>{myPost.Jobtitle}</p>
                             <p>{myPost.deadline}</p>
                             <p>{myPost.description}</p>
-                            <p>{myPost.category}</p>
+                            <p className='text-pink-600'>{myPost.category}</p>
                             <p>Minimum Price ${myPost.minimumPrice}</p>
                             <p>MaximumPrice ${myPost.maximumPrice}</p>
                             <div className="card-actions justify-end">

@@ -26,78 +26,78 @@ function AddJob() {
 
     return (
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className='flex'>
-                <div className="form-control md:w-1/2 ml-4">
+        <form className='bg-slate-300' onSubmit={handleSubmit(onSubmit)}>
+            <div className='md:flex'>
+                <div className="form-control md:w-1/2 md:ml-4">
                     <label className="label">
                         <span className="label-text">Email</span>
                     </label>
                     <label className="input-group">
-                        <input {...register("email")} type="text" defaultValue={user.email} required className="input input-bordered w-full" />
+                        <input {...register("email")} type="text" defaultValue={user.email} required className="input input-bordered input-accent w-full" />
                     </label>
                 </div>
-                <div className="form-control md:w-1/2 ml-4">
+                <div className="form-control md:w-1/2 md:ml-4">
                     <label className="label">
                         <span className="label-text">Job Title</span>
                     </label>
                     <label className="input-group">
                         <input {...register("Jobtitle")} type="text"
-                            placeholder="Job Title" required className="input input-bordered w-full" />
+                            placeholder="Job Title" required className="input input-bordered w-full input-accent" />
                     </label>
                 </div>
             </div>
-            <div className='flex'>
-                <div className="form-control md:w-1/2 ml-4">
+            <div className='md:flex'>
+                <div className="form-control md:w-1/2 md:ml-4">
                     <label className="label">
                         <span className="label-text">Deadline</span>
                     </label>
                     <label className="input-group">
                         <input {...register("deadline")} type="date"
-                            placeholder="Deadline" required className="input input-bordered w-full" />
+                            placeholder="Deadline" required className="input input-bordered w-full input-accent " />
                     </label>
                 </div>
-                <div className="form-control md:w-1/2 ml-4">
+                <div className="form-control md:w-1/2 md:ml-4">
                     <label className="label">
                         <span className="label-text">Description</span>
                     </label>
                     <label className="input-group">
                         <input {...register("description")} type="text"
-                            placeholder="Description" required className="input input-bordered w-full" />
+                            placeholder="Description" required className="input input-bordered w-full input-accent" />
                     </label>
                 </div>
             </div>
-            <div className='flex'>
-                <div className="form-control md:w-1/2 ml-4">
+            <div className='md:flex'>
+                <div className="form-control md:w-1/2 md:ml-4">
                     <label className="label">
                         <span className="label-text">Minimum Price</span>
                     </label>
                     <label className="input-group">
                         <input {...register("minimumPrice")} type="text"
-                            placeholder="Minimum Price" required className="input input-bordered w-full" />
+                            placeholder="Minimum Price" required className="input input-bordered w-full input-accent" />
                     </label>
                 </div>
-                <div className="form-control md:w-1/2 ml-4">
+                <div className="form-control md:w-1/2 md:ml-4">
                     <label className="label">
                         <span className="label-text">Maximum Price</span>
                     </label>
                     <label className="input-group">
                         <input {...register("maximumPrice")} type="text"
-                            placeholder="Maximum Price" required className="input input-bordered w-full" />
+                            placeholder="Maximum Price" required className="input input-bordered w-full input-accent" />
                     </label>
                 </div>
             </div>
-            <div className="form-control md:w-1/2 ml-4 py-4">
+            <div className="form-control md:w-1/2 md:ml-4 py-4">
                 <label className="label">
                     <span className="label-text">Category</span>
                 </label>
-                <select className='' {...register("category")}>
+                <select className='py-4 px-4 rounded-xl border-b-4 border-accent shadow-2xl shadow-cyan-300' {...register("category")}>
                     <option value="Web Development">Web Development</option>
                     <option value="Digital Marketing">Digital Marketing</option>
                     <option value="Graphics Design">Graphics Design</option>
                 </select>
             </div>
 
-            <input type="submit" value="Add Job" className="btn btn-block mb-5" />
+            <input type="submit" value="Add Job" className="btn btn-block bg-pink-400 hover:bg-yellow-300 mt-10  shadow-xl shadow-cyan-400" />
         </form>
 
     )

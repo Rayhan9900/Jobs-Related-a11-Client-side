@@ -2,7 +2,7 @@ import logo from '../../assets/logo12.jpg'
 
 function Footer() {
     return (
-        <footer className="footer p-10 bg-accent text-base-content mt-5">
+        <footer className="footer p-10 bg-accent text-base-content">
             <aside>
                 <img className='w-7/12 rounded-full' src={logo} alt="" />
                 <h2 className="text-2xl text-fuchsia-700 font-bold">TO TO COMPANY</h2>
