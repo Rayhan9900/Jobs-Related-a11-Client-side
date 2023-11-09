@@ -20,7 +20,7 @@ function Update() {
 
     const onSubmit = (data) => {
 
-        axios.put(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/jobs/${update._id}`, data)
+        axios.put(`https://jobs-related-server-ass-11.vercel.app/jobs/${update._id}`, data)
             .then(res => {
                 // if (res.data) {
                 //     toast.success('Update Successfully')

@@ -7,7 +7,7 @@ function ClientSite() {
     const [clients, setClients] = useState([])
 
     useEffect(() => {
-        fetch('https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/clients')
+        fetch('https://jobs-related-server-ass-11.vercel.app/clients')
             .then(res => res.json())
             .then(data => {
                 setClients(data)

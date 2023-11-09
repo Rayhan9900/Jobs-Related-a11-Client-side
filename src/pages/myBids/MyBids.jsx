@@ -11,14 +11,14 @@ function MyBids() {
     const { data: myBids = [], refetch } = useQuery({
         queryKey: ['bids', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/bids?email=${user.email}`,);
+            const res = await axios.get(`https://jobs-related-server-ass-11.vercel.app/bids?email=${user.email}`,);
 
             return res.data;
         }
     })
 
     const handleComplet = (id) => {
-        axios.patch(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/bids/complete/${id}`)
+        axios.patch(`https://jobs-related-server-ass-11.vercel.app/bids/complete/${id}`)
             .then((res) => {
                 refetch();
             });

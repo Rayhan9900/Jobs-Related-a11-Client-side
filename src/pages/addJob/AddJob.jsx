@@ -14,7 +14,7 @@ function AddJob() {
 
     const onSubmit = (data) => {
 
-        axios.post('https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/jobs', data)
+        axios.post('https://jobs-related-server-ass-11.vercel.app/jobs', data)
             .then(res => {
                 if (res.data.insertedId) {
                     toast.success('My Bid Added Successfully')

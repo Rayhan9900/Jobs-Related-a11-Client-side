@@ -12,7 +12,7 @@ function useMyPostedJob() {
     const { data: posted = [], refetch } = useQuery({
         queryKey: ['jobs', user?.email],
         queryFn: async () => {
-            const res = await axios.get(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/jobs?email=${user.email}`,);
+            const res = await axios.get(`https://jobs-related-server-ass-11.vercel.app/jobs?email=${user.email}`,);
 
             return res.data;
         }

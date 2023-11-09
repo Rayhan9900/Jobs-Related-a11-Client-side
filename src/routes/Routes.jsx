@@ -26,7 +26,7 @@ const router = createBrowserRouter([
             {
                 path: '/jobDetails/:id',
                 element: <PrivateRoute><JobDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://jobs-related-server-ass-11.vercel.app/jobs/${params.id}`)
             },
             {
                 path: "/addjob",
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
             {
                 path: "/myPostedJob",
                 element: <PrivateRoute><MyPostedJobs /></PrivateRoute>,
-                loader: () => fetch('https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/jobs')
+                loader: () => fetch('https://jobs-related-server-ass-11.vercel.app/jobs')
             },
             {
                 path: "/myBids",
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path: "/update/:id",
                 element: <Update />,
-                loader: ({ params }) => fetch(`https://jobs-related-server-ass-11-6s93zgp7p.vercel.app/jobs/${params.id}`)
+                loader: ({ params }) => fetch(`https://jobs-related-server-ass-11.vercel.app/jobs/${params.id}`)
             },
             {
                 path: "/login",
